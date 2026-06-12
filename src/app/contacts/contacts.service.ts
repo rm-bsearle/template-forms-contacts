@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { Contact } from './contact.model';
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 
 @Injectable({
   providedIn: 'root',

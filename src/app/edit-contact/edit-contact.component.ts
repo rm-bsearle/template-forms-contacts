@@ -36,5 +36,7 @@ export class EditContactComponent implements OnInit {
     if (!contactId) return;
   }
 
-  saveContact() {}
+  saveContact() {
+    console.log(this.contact);
+  }
 }

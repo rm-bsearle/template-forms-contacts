@@ -17,6 +17,7 @@ export class EditContactComponent implements OnInit {
   addressTypes = addressTypeValues;
   contact: Contact = {
     id: '',
+    personal: false,
     firstName: '',
     lastName: '',
     dateOfBirth: null,

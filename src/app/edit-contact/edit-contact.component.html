@@ -10,7 +10,11 @@
         <input placeholder="First Name" [(ngModel)]="contact.firstName" name="firstName" />
         <input placeholder="Last Name" [(ngModel)]="contact.lastName" name="lastName" />
         <input placeholder="Date of Birth" [(ngModel)]="contact.dateOfBirth" name="dateOfBirth" />
-        <input type="number"placeholder="Favorites Ranking" [(ngModel)]="contact.favoritesRanking" name="favoritesRanking" />
+        <div>
+          <span>Favorites Ranking:</span>
+          <input type="range" min="0" max="5" placeholder="Favorites Ranking" [(ngModel)]="contact.favoritesRanking" name="favoritesRanking" />
+          <span>{{contact.favoritesRanking}}</span>
+        </div>
         <div>
           <input type="checkbox" [(ngModel)]="contact.personal" name="personal" /> Personal
         </div>

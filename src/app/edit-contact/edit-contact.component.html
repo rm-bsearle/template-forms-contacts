@@ -7,7 +7,11 @@
       <nav>Name/Info</nav>
       <div>
         <input type="hidden" [ngModel]="contact.id" name="id" />
-        <input placeholder="First Name" [(ngModel)]="contact.firstName" name="firstName" />
+        <input placeholder="First Name" [(ngModel)]="contact.firstName" required #firstName="ngModel"
+          name="firstName" [class.error]="firstName.invalid && firstName.touched" />
+        @if(firstName.invalid && firstName.touched){
+          <em>Please enter a First Name</em>
+        }
         <input placeholder="Last Name" [(ngModel)]="contact.lastName" name="lastName" />
         <input type="date" placeholder="Date of Birth" [(ngModel)]="contact.dateOfBirth" name="dateOfBirth" />
         <div>

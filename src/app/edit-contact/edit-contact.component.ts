@@ -6,9 +6,10 @@ import { Contact, phoneTypeValues, addressTypeValues } from '../contacts/contact
 import { ContactsService } from '../contacts/contacts.service'
 import {  } from '../contacts/contact.model'
 import { RestrictedWordsValidator } from '../validators/restricted-words-validator.directive'
+import { DateValueAccessorDirective } from '../date-value-accessor/date-value-accessor.directive'
 
 @Component({
-  imports: [CommonModule, FormsModule, RestrictedWordsValidator],
+  imports: [CommonModule, FormsModule, RestrictedWordsValidator, DateValueAccessorDirective],
   standalone: true,
   templateUrl: './edit-contact.component.html',
   styleUrls: ['./edit-contact.component.css'],
@@ -56,7 +57,7 @@ export class EditContactComponent implements OnInit {
   saveContact(form: NgForm) {
     // console.log(form);
     // console.log(form.value);
-    console.log(this.contact.favoritesRanking, typeof this.contact.favoritesRanking);
+    console.log(this.contact.dateOfBirth, typeof this.contact.dateOfBirth);
     this.contactsService.saveContact(form.value).subscribe({
       next: () => { this.router.navigate(['/contacts']) },
     });

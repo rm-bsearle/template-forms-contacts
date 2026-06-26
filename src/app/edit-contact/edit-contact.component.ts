@@ -7,9 +7,10 @@ import { ContactsService } from '../contacts/contacts.service'
 import {  } from '../contacts/contact.model'
 import { RestrictedWordsValidator } from '../validators/restricted-words-validator.directive'
 import { DateValueAccessorDirective } from '../date-value-accessor/date-value-accessor.directive'
+import { ProfileIconSelector } from '../profile-icon-selector/profile-icon-selector';
 
 @Component({
-  imports: [CommonModule, FormsModule, RestrictedWordsValidator, DateValueAccessorDirective],
+  imports: [CommonModule, FormsModule, RestrictedWordsValidator, DateValueAccessorDirective, ProfileIconSelector],
   standalone: true,
   templateUrl: './edit-contact.component.html',
   styleUrls: ['./edit-contact.component.css'],

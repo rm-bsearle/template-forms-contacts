@@ -20,6 +20,7 @@ export class EditContactComponent implements OnInit {
   addressTypes = addressTypeValues;
   contact: Contact = {
     id: '',
+    icon: '',
     personal: false,
     firstName: '',
     lastName: '',

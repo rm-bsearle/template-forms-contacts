@@ -60,8 +60,15 @@ export class EditContactComponent implements OnInit {
     // console.log(form);
     console.log(form.value);
     // console.log(this.contact.dateOfBirth, typeof this.contact.dateOfBirth);
-    this.contactsService.saveContact(this.contact).subscribe({
+    this.contactsService.saveContact(form.value).subscribe({
       next: () => { this.router.navigate(['/contacts']) },
+    });
+  }
+
+  addPhone() {
+    this.contact.phones.push({
+      phoneNumber: '',
+      phoneType: '',
     });
   }
 }

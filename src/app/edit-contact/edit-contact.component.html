@@ -28,17 +28,19 @@
       </div>
     </section>
     <section>
-      <nav>Phone</nav>
-      <div class="flex-column" ngModelGroup="phone">
-        <div class="flex-group">
-          <input placeholder="Phone" [(ngModel)]="contact.phone.phoneNumber" name="phoneNumber" />
-          <img src="/assets/plus-grey-blue.png" class="add" />
-        </div>
-        <div class="radio">
-          @for(phoneType of phoneTypes; track phoneType.value) {
-            <input type="radio" [value]="phoneType.value" [(ngModel)]="contact.phone.phoneType" name="phoneType"> {{phoneType.title}}
-          }
-        </div>
+      <nav>Phones</nav>
+      <div class="flex-column" ngModelGroup="phones">
+        @for(phone of contact.phones; track $index; let phoneIndex = $index){
+          <div class="flex-group">
+            <input placeholder="Phone" [(ngModel)]="phone.phoneNumber" name="phoneNumber{{$index}}" />
+            <img src="/assets/plus-grey-blue.png" class="add" />
+          </div>
+          <div class="radio">
+            @for(phoneType of phoneTypes; track phoneType.value) {
+              <input type="radio" [value]="phoneType.value" [(ngModel)]="phone.phoneType" name="phoneType{{phoneIndex}}"> {{phoneType.title}}
+            }
+          </div>
+        }
       </div>
     </section>
     <section>
